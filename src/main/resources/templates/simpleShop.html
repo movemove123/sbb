@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleShop</title>
+    <meta charset="utf-8" />
+    <link href="css/simpleShop.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+
+  <body>
+	<html xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar">
+      <a class="logo" th:href="@{/main}">
+        <img src="images/logo1.png" height="20px">
+      </a>
+      <div class="search">
+        <input type="text">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+      </div>
+      <ul>
+        <li><a th:href="@{/question/list}">Q&A</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a id="cart-icon" th:href="@{/cart}">Cart</a></li>
+        <li><a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">login</a>
+                    	<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">logout</a></li>
+      </ul>
+    </div>
+    
+    <img class="hero_header" src="images/logo.jpeg" height="5px">
+    <h1>축구의 모든것</h1>
+    <div class="products">
+      <a href="#">
+        <img src="images/p1.png">
+        <p>유니폼1</p>
+        <p class="price">54,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn1" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p2.png">
+        <p>유니폼2</p>
+        <p class="price">42,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn2" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p3.png">
+        <p>유니폼3</p>
+        <p class="price">69,000</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn3" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p4.jpeg">
+        <p>공1</p>
+        <p class="price">76,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn4" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p5.jpeg">
+        <p>공2</p>
+        <p class="price">155,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn5" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p6.jpeg">
+        <p>공3</p>
+        <p class="price">51,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn6" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p7.jpeg">
+        <p>축구화1</p>
+        <p class="price">37,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn7" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p8.jpg">
+        <p>축구화2</p>
+        <p class="price">75,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn8" value="장바구니 담기">
+      </a>
+      <a href="#">
+        <img src="images/p9.png">
+        <p>축구화3</p>
+        <p class="price">76,900</p>
+        <input type="button" name="p1-cart" id="add-to-cart-btn9" value="장바구니 담기">
+      </a>
+      <div class="clearfix"></div>
+    </div>
+    
+    <div class="footer">
+      <a href="#"><img src="images/facebook.svg"></a>
+      <a href="#"><img src="images/instagram.svg"></a>
+      <a href="#"><img src="images/twiiter.svg"></a>
+    </div>
+    </body>html>
+  </body>
+</html>

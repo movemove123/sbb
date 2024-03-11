@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+    <link href="css/simpleShop.css" rel="stylesheet" />
+    <!-- sbb CSS -->
+    <title>Hello, sbb!</title>
+    
+	<style>
+		
+		img { 
+			width: 200px;
+    		height: 100px;
+    		vertical-align: middle;
+		}
+		li {
+			list-style-type: none;
+			display: inline-block; /* 수평 정렬을 위해 인라인 블록으로 설정 */
+      		margin-right: 10px; /* 필요에 따라 간격 조절 */
+		}
+		li > a {
+			text-decoration: none; 
+			color: black
+		}
+	</style>
+</head>
+<body>
+	
+	
+	<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+	<div class="navbar">
+        <a class="logo" th:href="@{/main}">
+          <img src="/images/logo1.png" height="20px">
+        </a>
+        <ul>
+          <li><a  th:href="@{/question/list}">Q&A</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a  th:href="@{/cart}">Cart</a></li>
+          <li><a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">Login</a>
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">Logout</a></li>
+        </ul>
+      </div>
+   
+    <!-- 네비게이션바 -->
+	<nav th:replace="~{navbar :: navbarFragment}"></nav>
+	<th:block layout:fragment="content"></th:block>
+	<!-- 기본 템플릿 안에 삽입될 내용 End -->
+	<!-- Bootstrap JS -->
+	<script th:src="@{/bootstrap.min.js}"></script>
+	<!-- 자바스크립트 Start -->
+	<th:block layout:fragment="script"></th:block>
+	<!-- 자바스크립트 End -->
+</body>
+</html>
